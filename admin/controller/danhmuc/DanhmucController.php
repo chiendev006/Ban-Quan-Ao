@@ -1,9 +1,7 @@
 <?php
 class DanhmucController {
     public function index() {
-        include_once "views/layout/header.php";
-        include_once "views/layout/home.php";
-        include_once "views/layout/footer.php";
+    include_once("views/dashboard/index.php");
     }
     public function danhmuc() {
         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
