@@ -1,6 +1,6 @@
 
 <?php
-include_once ('./view/layout/header.php');
+include_once ('view/layout/header.php');
 ?>
 
 
@@ -478,5 +478,5 @@ include_once ('./view/layout/header.php');
     </div>
     <!-- Vendor End -->
 <?php
-include_once ('./view/layout/footer.php');
+include_once ('view/layout/footer.php');
 ?>

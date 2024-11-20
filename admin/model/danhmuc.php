@@ -1,26 +1,32 @@
 <?php
-function insert_danhsach($tenloai) {
-    $sql = "insert into danh_muc(name_danh_muc) values('$tenloai')";
-    pdo_execute($sql);
-}
-function loadall_danhmuc() {
-    $sql = "select * from danh_muc order by name_danh_muc";
-    $danh_muc = pdo_query($sql);
-    return  $danh_muc;
+include_once 'pdo.php';
+
+function listDanhMuc()
+{
+    $sql = 'select * from danh_muc';
+    return pdo_query($sql);
 }
 
-function delete_danhmuc($id) {
-    $sql = "delete from danh_muc where id_danh_muc = ".$id;
-    pdo_execute($sql);
-}
-function loadone_danhmuc($id) {
-    $sql = "select * from danh_muc where id_danh_muc=".$id;
-    $ds = pdo_query_one($sql);
-    return $ds;
-}
-function update_danhmuc($id,$tenloai) {
-    $sql = "update danh_muc set name_danh_muc='".$tenloai."' where id_danh_muc=".$id;
+function addDanhMuc($name)
+{
+    $sql = "insert into danh_muc (name_danh_muc) values ('$name')";
     pdo_execute($sql);
 }
 
-?>
+function getDanhMucById($id)
+{
+    $sql = "select * from danh_muc where id_danh_muc=$id";
+    return pdo_query_one($sql);
+}
+
+function editDanhMuc($id, $name)
+{
+    $sql = "update danh_muc set name_danh_muc = '$name' where id_danh_muc='$id'";
+    pdo_execute($sql);
+}
+
+function changeStatus($id, $status)
+{
+    $sql = "update danh_muc set status = '$status' where id_danh_muc='$id'";
+    pdo_execute($sql);
+}
