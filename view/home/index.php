@@ -1,3 +1,4 @@
+
 <?php
 include_once ('./view/layout/header.php');
 ?>
@@ -479,4 +480,3 @@ include_once ('./view/layout/header.php');
 <?php
 include_once ('./view/layout/footer.php');
 ?>
-
