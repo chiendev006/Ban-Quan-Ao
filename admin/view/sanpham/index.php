@@ -47,6 +47,7 @@ include_once("./view/layouts/header.php");
                         <tbody>
                             <?php
                             foreach ($listSanPham as $key => $value) {
+
                                 ?>
                                 <tr>
                                     <td><?= $value['id_sp'] ?></td>
@@ -54,20 +55,35 @@ include_once("./view/layouts/header.php");
                                     <td><?= $value['mau_sac'] ?></td>
                                     <td><?= $value['kich_co'] ?></td>
                                     <td><?= $value['gia_sp'] ?></td>
-                                    <td><img src="<?= $value['img'] ?>" alt="<?= $value['ten_sp'] ?>"></td>
+                                    <td>
+                                        <?php
+                                        
+                                        if ($value['img']!=null): ?>
+                                            <img src="<?= $base_url . 'upload/' . $value['img'] ?>" alt="<?= $value['ten_sp'] ?>"
+                                                style="width: 100px; height: auto;">
+                                        <?php else: ?>
+                                            <img src="<?=$base_url?>upload/default.jpg" alt="Ảnh mặc định"
+                                                style="width: 100px; height: auto;">
+                                        <?php endif; ?>
+                                    </td>
+
+
                                     <td><?= $value['loai'] ?></td>
                                     <td><?= $value['iddm'] ?></td>
                                     <td>
                                         <div class="d-flex">
-                                            <a class="btn btn-secondary" href="index.php?action=editsanpham&id=<?=$value['id_sp']?>">Sửa</a>
+                                            <a class="btn btn-secondary"
+                                                href="index.php?action=editsanpham&id=<?= $value['id_sp'] ?>">Sửa</a>
                                             <?php
                                             if ($value['status'] == 1) {
                                                 ?>
-                                                <a class="btn btn-danger" href="index.php?action=deletesanpham&id=<?=$value['id_sp']?>&status=0">Ẩn</a>
+                                                <a class="btn btn-danger"
+                                                    href="index.php?action=deletesanpham&id=<?= $value['id_sp'] ?>&status=0">Ẩn</a>
                                                 <?php
                                             } else {
                                                 ?>
-                                                <a class="btn btn-danger" href="index.php?action=deletesanpham&id=<?=$value['id_sp']?>&status=1">Hiện</a>
+                                                <a class="btn btn-danger"
+                                                    href="index.php?action=deletesanpham&id=<?= $value['id_sp'] ?>&status=1">Hiện</a>
                                                 <?php
                                             }
                                             ?>
