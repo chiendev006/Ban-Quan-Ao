@@ -37,7 +37,7 @@
                         <li class="sidebar-title">Menu</li>
 
                         <li class="sidebar-item  ">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="http://localhost/DU_AN_BAN_QUAN_AO/admin/index.html" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -60,6 +60,12 @@
                             <a href="index.php?action=listtaikhoan" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Tài khoản</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="index.php?action=listhoadon" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Hoa don</span>
                             </a>
                         </li>
 

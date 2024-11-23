@@ -33,29 +33,31 @@ include_once("./view/layouts/header.php");
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
-                                <th class="col-1">Id tai khoan</th>
+                                <th class="col-1">Id hoa don</th>
                                 <th>Id khach hang</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Ten</th>
+                                <th>Hinh thuc thanh toan</th>
+                                <th>Tong tien</th>
+                                <th>Ho ten</th>
+                                <th>Dia chi</th>
                                 <th>SDT</th>
-                                
-                                <th class="col-2">Action</th>
+                                <th class="col-2">Status</th>
+                                <th>Chi tiet hoa don</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($listTaiKhoan as $key => $value) {
+                            foreach ($hoaDonInfo as $key => $value) {
                                 ?>
                                 <tr>
-                                    <td><?= $value['id_taikhoan'] ?></td>
+                                    <td><?= $value['id_hoadon'] ?></td>
                                     <td><?= $value['id_khachhang'] ?></td>
-                                    <td><?= $value['email'] ?></td>
-                                    <td><?= $value['matkhau'] ?></td>
-                                    <td><?= $value['ten'] ?></td>
+                                    <td><?= $value['trang_thai_tt'] == 0 ? 'Chưa thanh toán' : 'Đã thanh toán' ?></td>
+                                    <td><?= $value['tongtien'] ?></td>
+                                    <td><?= $value['hoten'] ?></td>
+                                    <td><?= $value['diachi'] ?></td>
                                     <td><?= $value['sdt'] ?></td>
-                                    
-                                    <td><button class="btn btn-danger">Xoa</button></td>
+                                    <td><?= $value['status'] == 0 ? 'Chưa thanh toán' : 'Đã thanh toán' ?></td>
+                                    <td><a class="btn btn-secondary" href="index.php?action=chitiethoadon&id=<?= $value["id_hoadon"] ?>">Chi tiet hoa don</a></td>
                                 </tr>
                                 <?php
                             }
@@ -64,7 +66,7 @@ include_once("./view/layouts/header.php");
                     </table>
                 </div>
             </div>
-
+                            
         </section>
     </div>
     <?php

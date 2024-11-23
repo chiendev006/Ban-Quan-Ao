@@ -12,7 +12,7 @@ include_once("./view/layouts/header.php");
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Sua sản phẩm</h3>
+                    <h3>Sửa sản phẩm</h3>
                     <p class="text-subtitle text-muted">For user to check they list</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
@@ -31,25 +31,39 @@ include_once("./view/layouts/header.php");
                     <form action="index.php?action=editsanpham" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="danhmuc" class="form-label">Tên danh mục</label>
-                            <select class="form-select" name="danhmuc" aria-label="Default select example">
-                                <option value="1">Áo phông</option>
+                            <select required class="form-select" name="danhmuc" aria-label="Default select example">
+                                <?php
+                                foreach ($listDanhMuc as $item) {
+                                    ?>
+                                    <option <?= $sanPhamInfo['id_danh_muc'] == $item['id_danh_muc'] ? 'selected' : '' ?>
+                                        value="<?= $item['id_danh_muc'] ?>"><?= $item['name_danh_muc'] ?>
+                                    </option>
+                                <?php } ?>
                             </select>
                         </div>
+
                         <div class="mb-3">
                             <label for="danhmuc" class="form-label">Tên sản phẩm</label>
-                            <input type="text" value="<?= $sanphamInfor['ten_sp'] ?>"  class="form-control" name="ten_sp" id="danhmuc">
+                            <input value="<?= $sanPhamInfo['ten_sp'] ?>" required type="text" class="form-control"
+                                name="name" id="danhmuc">
                         </div>
                         <div class="mb-3">
                             <label for="mausau" class="form-label">Màu sắc</label>
-                            <select class="form-select" value="<?= $sanphamInfor['mau_sac'] ?>"  name="mau_sac" aria-label="Default select example">
-                                <option value="Đỏ">Đỏ</option>
-                                <option value="Vàng">Vàng</option>
-                                <option value="Đen">Đen</option>
+                            <select required class="form-select" name="mausac" aria-label="Default select example">
+                                <option <?= $sanPhamInfo['mau_sac'] == 'Đỏ' ? 'selected' : '' ?>
+                                    value="Đỏ">Đỏ
+                                </option>
+                                <option <?= $sanPhamInfo['mau_sac'] == 'Vàng' ? 'selected' : '' ?>
+                                    value="Vàng">Vàng
+                                </option>
+                                <option <?= $sanPhamInfo['mau_sac'] == 'Đen' ? 'selected' : '' ?>
+                                    value="Đen">Đen
+                                </option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="mausau" class="form-label">Kích cơ</label>
-                            <select class="form-select" value="<?= $sanphamInfor['kich_co'] ?>"  name="kich_co" aria-label="Default select example">
+                            <label for="mausau" class="form-label">Kích cỡ</label>
+                            <select required class="form-select" name="kichco" aria-label="Default select example">
                                 <option value="L">L</option>
                                 <option value="M">M</option>
                                 <option value="S">S</option>
@@ -59,19 +73,21 @@ include_once("./view/layouts/header.php");
                         </div>
 
                         <div class="mb-3">
-                            <label for="danhmuc"   class="form-label">Gia sản phẩm</label>
-                            <input type="number" value="<?= $sanphamInfor['gia_sp'] ?>" class="form-control" name="gia_sp" id="danhmuc">
+                            <label for="danhmuc" class="form-label">Gía sản phẩm</label>
+                            <input value="<?= $sanPhamInfo['gia_sp'] ?>" required type="number" class="form-control"
+                                name="gia" id="danhmuc">
                         </div>
                         <div class="mb-3">
-                            <label for="danhmuc" lass="form-label">Chất liệu sản phẩm</label>
-                            <input type="text" value="<?= $sanphamInfor['loai'] ?>" class="form-control" name="loai" id="danhmuc">
+                            <label for="danhmuc" class="form-label">Chất liệu sản phẩm</label>
+                            <input value="<?= $sanPhamInfo['loai'] ?>" required type="text" class="form-control"
+                                name="loai" id="danhmuc">
                         </div>
                         <div class="mb-3">
                             <label for="danhmuc" class="form-label">Ảnh sản phẩm</label>
-                            <input type="file" value="<?= $sanphamInfor['img'] ?>" class="form-control" name="img" id="danhmuc">
+                            <input type="file" class="form-control" name="hinhanh" id="danhmuc">
                         </div>
-                        <input type="hidden" value="<?= $sanphamInfor['id_sp'] ?>" name="id_sp">
-                        <button type="submit" name="editsp" class="btn btn-primary">Sua</button>
+                        <input type="hidden" name="id" value="<?= $sanPhamInfo['id_sp'] ?>">
+                        <button type="submit" name="edit" class="btn btn-primary">Sửa</button>
                     </form>
                 </div>
             </div>
@@ -80,4 +96,4 @@ include_once("./view/layouts/header.php");
     </div>
     <?php
     include_once("./view/layouts/footer.php");
-    ?> 
+    ?>
