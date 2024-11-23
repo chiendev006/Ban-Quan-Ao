@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="index.php?action=listtaikhoan" class='sidebar-link'>
+                            <a href="index.php?action=thongke" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Thông kê</span>
                             </a>
