@@ -32,6 +32,10 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
             break;
         case "thongke":
             include_once "controller/thongke/index.php";
+            break;
+        case "dashboard":
+            include_once "controller/dashboard/index.php";
+            break;
 
     }
 } else {

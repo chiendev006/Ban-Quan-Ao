@@ -107,7 +107,7 @@ function pdo_query_value($sql)
     try {
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
+        $stmt->execute($sql_args[0]); // Truyền tham số đầu tiên đúng cách
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return array_values($row)[0];
     } catch (PDOException $e) {
@@ -116,3 +116,7 @@ function pdo_query_value($sql)
         unset($conn);
     }
 }
+
+
+
+
