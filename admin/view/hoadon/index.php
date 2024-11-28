@@ -50,13 +50,13 @@ include_once("./view/layouts/header.php");
                                 ?>
                                 <tr>
                                     <td><?= $value['id_hoadon'] ?></td>
-                                    <td><?= $value['id_khachhang'] ?></td>
-                                    <td><?= $value['trang_thai_tt'] == 0 ? 'Chưa thanh toán' : 'Đã thanh toán' ?></td>
+                                    <td><?= $value['id_khachhang'] ?></td>   
+                                    <td><?= $value['trang_thai_tt'] == 0 ? 'Tiền mặt' : "Chuyển khoản" ?></td>
                                     <td><?= $value['tongtien'] ?></td>
                                     <td><?= $value['hoten'] ?></td>
                                     <td><?= $value['diachi'] ?></td>
                                     <td><?= $value['sdt'] ?></td>
-                                    <td><?= $value['status'] == 0 ? 'Chưa thanh toán' : 'Đã thanh toán' ?></td>
+                                    <td><?= $value['status'] == 0 ? 'Chưa thanh toán' : ($value['status'] == 1 ? 'Đã thanh toán' : "Hủy đơn hàng") ?></td>
                                     <td><a class="btn btn-secondary" href="index.php?action=chitiethoadon&id=<?= $value["id_hoadon"] ?>">Chi tiet hoa don</a></td>
                                 </tr>
                                 <?php

@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Camera</title>
+    <title>EShopper - Bootstrap Shop Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.icon" rel="icon">
+    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,6 +23,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="./aset/css/style.css" rel="stylesheet">
+    <style>
+        
+    </style>
 </head>
 
 <body>
@@ -61,13 +64,13 @@
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">CSDMK</span>Thời trang 4.0</h1>
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
                 </a>
             </div>
             <div class="col-lg-6 col-6 text-left">
                 <form action="">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm Camera">
+                        <input type="text" class="form-control" placeholder="Search for products">
                         <div class="input-group-append">
                             <span class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
@@ -92,9 +95,23 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid mb-5">
+    <div class="container-fluid">
         <div class="row border-top px-xl-5">
-            <?php include_once "view/danhmuc.php" ?>
+        <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">Danh Mục Thời Trang</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+                    <?php
+                        foreach ($listDanhMuc as $item) {
+                    ?>
+                            <p><?= $item["name_danh_muc"] ?></p>
+                    <?php } ?>
+                    </div>
+                </nav>
+            </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
@@ -105,9 +122,9 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">Trang chủ</a>
-                            <a href="shop.html" class="nav-item nav-link">Giới Thiệu</a>
-                            <a href="detail.html" class="nav-item nav-link">Sản Phẩm</a>
+                            <a href="http://localhost/DU_AN_BAN_QUAN_AO/" class="nav-item nav-link">Home</a>
+                            <a href="http://localhost/DU_AN_BAN_QUAN_AO/index.php?action=index-shop" class="nav-item nav-link active">Shop</a>
+                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded-0 m-0">
@@ -118,30 +135,30 @@
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Đăng Nhập</a>
-                            <a href="" class="nav-item nav-link">Đăng Ký</a>
+                            <a href="" class="nav-item nav-link">Login</a>
+                            <a href="" class="nav-item nav-link">Register</a>
                         </div>
                     </div>
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
-                            <img class="img-fluid" src="img/1.avif" alt="Image">
+                            <img class="img-fluid" src="aset/img/carousel-1.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">Giảm 10% với đơn hàng của bạn</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Camera cổ xưa</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Mua Ngay</a>
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item" style="height: 410px;">
-                            <img class="img-fluid" src="img/baner 2.jpg" alt="Image">
+                            <img class="img-fluid" src="aset/img/carousel-2.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">Giảm 10% với đơn hàng của bạn</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Camera cổ xưa</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Mua Ngay</a>
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
