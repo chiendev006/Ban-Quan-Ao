@@ -1,5 +1,5 @@
 <?php
-
+include_once 'pdo.php';
 function listSanphamlimit() {
     $sql = "SELECT * FROM (SELECT * FROM san_pham ORDER BY id_sp DESC LIMIT 8) sub ORDER BY id_sp ASC";
     return pdo_query($sql);
