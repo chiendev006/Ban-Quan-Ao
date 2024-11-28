@@ -3,6 +3,9 @@ $base_url = "http://" . $_SERVER['SERVER_NAME'] . dirname($_SERVER["REQUEST_URI"
 if (isset($_GET['action']) && $_GET['action'] != '') {
     $action = $_GET['action'];
     switch ($action) {
+        case "index":
+            include_once 'controller/dashboard/index.php';
+            break;
         case "listdanhmuc":
             include_once 'controller/danhmuc/index.php';
             break;

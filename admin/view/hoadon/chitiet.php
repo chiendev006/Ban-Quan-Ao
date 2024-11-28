@@ -51,18 +51,21 @@ include_once("./view/layouts/header.php");
                         <div class="mb-3">
                             <label for="name" class="form-label">Phương thức thanh toán</label>
                             <select name="trang_thai_tt" class="form-select" aria-label="Default select example">
-                                <option <?= $hoaDonChiTiet['trang_thai_tt'] == 1 ? 'selected' : '' ?> value="1">Tiền
-                                    mặt</option>
                                 <option <?= $hoaDonChiTiet['trang_thai_tt'] == 0 ? 'selected' : '' ?> value="0">
                                     Chuyển khoản</option>
+                                <option <?= $hoaDonChiTiet['trang_thai_tt'] == 1 ? 'selected' : '' ?> value="1">Tiền
+                                    mặt</option>
+                                
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="status" class="form-label">Tình trạng thanh toán</label>
                             <select name="status" class="form-select" aria-label="Default select example">
+                                <option <?= $hoaDonChiTiet['status'] == 0 ? 'selected' : '' ?> value="0">Chưa thanh toán
+                                </option>
                                 <option <?= $hoaDonChiTiet['status'] == 1 ? 'selected' : '' ?> value="1">Đã thanh toán
                                 </option>
-                                <option <?= $hoaDonChiTiet['status'] == 0 ? 'selected' : '' ?> value="0">Chưa thanh toán
+                                <option <?= $hoaDonChiTiet['status'] == 2 ? 'selected' : '' ?> value="2">Hủy đơn hàng
                                 </option>
                             </select>
                         </div>

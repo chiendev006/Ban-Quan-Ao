@@ -35,7 +35,7 @@ include_once("./view/layouts/header.php");
                                 <?php
                                 foreach ($listDanhMuc as $item) {
                                     ?>
-                                    <option <?= $sanPhamInfo['id_danh_muc'] == $item['id_danh_muc'] ? 'selected' : '' ?>
+                                    <option <?= $item['id_danh_muc'] == $item['id_danh_muc'] ? 'selected' : '' ?>
                                         value="<?= $item['id_danh_muc'] ?>"><?= $item['name_danh_muc'] ?>
                                     </option>
                                 <?php } ?>

@@ -111,7 +111,7 @@ address {
   justify-content: space-between;
 }
 .product-img img {
-  width: 100px;
+  width: 500px;
   height: 300px; /* Cố định chiều cao của ảnh */
   object-fit: cover; /* Đảm bảo ảnh không bị méo */
 }
@@ -3011,7 +3011,9 @@ input[type="button"].btn-block {
     transition: none;
   }
 }
-
+.container-fluid  {
+  margin-top: 30px;
+}
 .dropup,
 .dropright,
 .dropdown,
@@ -7479,7 +7481,7 @@ button.bg-dark:focus {
 }
 
 .p-0 {
-  padding: 0 !important;
+  padding: 0;
 }
 
 .pt-0,

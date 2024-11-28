@@ -57,17 +57,14 @@ include_once("./view/layouts/header.php");
                                     <td><?= $value['gia_sp'] ?></td>
                                     <td>
                                         <?php
-                                        
                                         if ($value['img']!=null): ?>
-                                            <img src="<?= $base_url . 'upload/' . $value['img'] ?>" alt="<?= $value['ten_sp'] ?>"
+                                            <img src="<?= $base_url . 'upload/' . $value['img'] ?>" alt=""
                                                 style="width: 100px; height: auto;">
                                         <?php else: ?>
                                             <img src="<?=$base_url?>upload/default.jpg" alt="Ảnh mặc định"
                                                 style="width: 100px; height: auto;">
                                         <?php endif; ?>
                                     </td>
-
-
                                     <td><?= $value['loai'] ?></td>
                                     <td><?= $value['iddm'] ?></td>
                                     <td>
