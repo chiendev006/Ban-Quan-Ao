@@ -81,8 +81,6 @@ include_once("./view/layouts/header.php");
                                     <th scope="col">ID</th>
                                     <th scope="col">Tên sản phẩm</th>
                                     <th scope="col">Ảnh sản phẩm</th>
-                                    <th scope="col">Màu sắc</th>
-                                    <th scope="col">Kích cỡ</th>
                                     <th scope="col">Số lượng</th>
                                     <th scope="col">Giá sản phẩm</th>
                                     <th scope="col">Tổng giá</th>
@@ -94,8 +92,6 @@ include_once("./view/layouts/header.php");
                                         <td><?= $item['id_cthd'] ?></td>
                                         <td><?= $item['ten_sp'] ?></td>
                                         <td><img src="<?= $base_url . 'upload/' . $item['img'] ?>" style="width: 100px; height: auto;"></td>
-                                        <td><?= $item['mausac'] ?></td>
-                                        <td><?= $item['kichco'] ?></td>
                                         <td><?= $item['so_luong'] ?></td>
                                         <td><?= number_format($item['gia']) ?> VNĐ</td>
                                         <td><?= number_format($item['gia'] * $item['so_luong']) ?> VNĐ</td>

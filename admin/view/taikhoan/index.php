@@ -34,13 +34,12 @@ include_once("./view/layouts/header.php");
                         <thead>
                             <tr>
                                 <th class="col-1">Id tai khoan</th>
-                                <th>Id khach hang</th>
+                                <th>Họ tên</th>
+                                <th>Ngày sinh</th>
                                 <th>Email</th>
                                 <th>Password</th>
-                                <th>Ten</th>
                                 <th>SDT</th>
-                                
-                                <th class="col-2">Action</th>
+                                <th>Địa chỉ</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,14 +47,13 @@ include_once("./view/layouts/header.php");
                             foreach ($listTaiKhoan as $key => $value) {
                                 ?>
                                 <tr>
-                                    <td><?= $value['id_taikhoan'] ?></td>
                                     <td><?= $value['id_khachhang'] ?></td>
+                                    <td><?= $value['ho_ten'] ?></td>
+                                    <td><?= $value['ngay_sinh'] ?></td>
                                     <td><?= $value['email'] ?></td>
                                     <td><?= $value['matkhau'] ?></td>
-                                    <td><?= $value['ten'] ?></td>
                                     <td><?= $value['sdt'] ?></td>
-                                    
-                                    <td><button class="btn btn-danger">Xoa</button></td>
+                                    <td><?= $value['dia_chi'] ?></td>
                                 </tr>
                                 <?php
                             }

@@ -104,11 +104,14 @@
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                    <?php
-                        foreach ($listDanhMuc as $item) {
-                    ?>
-                            <p><?= $item["name_danh_muc"] ?></p>
-                    <?php } ?>
+                    <div class="featured__controls">
+                    <ul>
+                        <li class="active" data-filter="*">All</li>
+                        <?php foreach ($listDanhMuc as $key => $item) { ?>
+                            <li data-filter=".<?= $item['id_danh_muc'] ?>"><?= $item['name_danh_muc'] ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
                     </div>
                 </nav>
             </div>
@@ -122,28 +125,28 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="http://localhost/DU_AN_BAN_QUAN_AO/" class="nav-item nav-link">Home</a>
-                            <a href="http://localhost/DU_AN_BAN_QUAN_AO/index.php?action=index-shop" class="nav-item nav-link active">Shop</a>
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <a href="http://localhost/DU_AN_BAN_QUAN_AO/" class="nav-item nav-link">Trang chủ</a>
+                            <a href="http://localhost/DU_AN_BAN_QUAN_AO/index.php?action=index-shop" class="nav-item nav-link active">Sản phẩm</a>
+                            <a href="detail.html" class="nav-item nav-link">Chi tiết sản phẩm</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giỏ hàng</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <a href="index.php?action=listgiohang" class="dropdown-item">Chi tiết hóa đơn</a>
+                                    <a href="index.php?action=hienthithanhtoan" class="dropdown-item">Thanh toán</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="index.php?action=contact" class="nav-item nav-link">Liên hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="" class="nav-item nav-link">Login</a>
-                            <a href="" class="nav-item nav-link">Register</a>
+                            <a href="index.php?action=login" class="nav-item nav-link">Đăng nhập</a>
+                            <a href="index.php?action=dangki" class="nav-item nav-link">Đăng kí</a>
                         </div>
                     </div>
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
-                            <img class="img-fluid" src="aset/img/carousel-1.jpg" alt="Image">
+                            <img class="img-fluid" src="admin/asset/images/logo/299_banner_web.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
@@ -153,7 +156,17 @@
                             </div>
                         </div>
                         <div class="carousel-item" style="height: 410px;">
-                            <img class="img-fluid" src="aset/img/carousel-2.jpg" alt="Image">
+                            <img class="img-fluid" src="admin/asset/images/logo/banner_0.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid" src="admin/asset/images/logo/banner3.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>

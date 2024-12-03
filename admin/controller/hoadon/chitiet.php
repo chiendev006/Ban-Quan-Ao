@@ -9,9 +9,6 @@ if (isset($_GET['id'])) {
         $sanPhamInfo = getSanPhamById($item['id_sanpham']);
         $hoaDonInfo[$key]['ten_sp'] = $sanPhamInfo['ten_sp'];
         $hoaDonInfo[$key]['img'] = $sanPhamInfo['img'];
-        $hoaDonInfo[$key]['mausac'] = $sanPhamInfo['mau_sac'];
-        $hoaDonInfo[$key]['kichco'] = $sanPhamInfo['kich_co'];
-        
     }
     include_once "./view/hoadon/chitiet.php";
 }

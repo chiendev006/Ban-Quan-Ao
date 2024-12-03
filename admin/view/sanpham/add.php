@@ -47,31 +47,23 @@ include_once("./view/layouts/header.php");
                             <input type="text" class="form-control" name="name" id="danhmuc">
                         </div>
                         <div class="mb-3">
-                            <label for="mausau" class="form-label">Màu sắc</label>
-                            <select class="form-select" name="mausac" aria-label="Default select example">
-                                <option value="Đỏ">Đỏ</option>
-                                <option value="Vàng">Vàng</option>
-                                <option value="Đen">Đen</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="mausau" class="form-label">Kích cơx</label>
-                            <select class="form-select" name="kichco" aria-label="Default select example">
-                                <option value="L">L</option>
-                                <option value="M">M</option>
-                                <option value="S">S</option>
-                                <option value="XL">XL</option>
-                                <option value="XXL">XXL</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
                             <label for="danhmuc" class="form-label">Gia sản phẩm</label>
-                            <input type="number" class="form-control" name="gia" id="danhmuc">
+                            <input type="number" class="form-control" name="gia_sp" id="danhmuc">
                         </div>
                         <div class="mb-3">
-                            <label for="danhmuc" class="form-label">Chất liệu sản phẩm</label>
-                            <input type="text" class="form-control" name="loai" id="danhmuc">
+                            <label for="mausau" class="form-label">Hãng</label>
+                            <select class="form-select" name="hang" aria-label="Default select example">
+                            <option value="Vui lòng chọn hãng">Vui lòng chọn hãng</option>
+                                <option value="Panasonic">Panasonic</option>
+                                <option value="Sam Sung">Sam Sung</option>
+                                <option value="FPT">FPT</option>
+                                <option value="TOSHIBA">TOSHIBA</option>
+                                <option value="PHILIPS">PHILIPS</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="danhmuc" class="form-label">Mô tả sản phẩm</label>
+                            <input type="text" class="form-control" name="mo_ta" id="danhmuc">
                         </div>
                         <div class="mb-3">
                             <label for="danhmuc" class="form-label">Ảnh sản phẩm</label>

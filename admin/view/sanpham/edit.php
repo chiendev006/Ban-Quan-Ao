@@ -48,44 +48,30 @@ include_once("./view/layouts/header.php");
                                 name="name" id="danhmuc">
                         </div>
                         <div class="mb-3">
-                            <label for="mausau" class="form-label">Màu sắc</label>
-                            <select required class="form-select" name="mausac" aria-label="Default select example">
-                                <option <?= $sanPhamInfo['mau_sac'] == 'Đỏ' ? 'selected' : '' ?>
-                                    value="Đỏ">Đỏ
-                                </option>
-                                <option <?= $sanPhamInfo['mau_sac'] == 'Vàng' ? 'selected' : '' ?>
-                                    value="Vàng">Vàng
-                                </option>
-                                <option <?= $sanPhamInfo['mau_sac'] == 'Đen' ? 'selected' : '' ?>
-                                    value="Đen">Đen
-                                </option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="mausau" class="form-label">Kích cỡ</label>
-                            <select required class="form-select" name="kichco" aria-label="Default select example">
-                                <option value="L">L</option>
-                                <option value="M">M</option>
-                                <option value="S">S</option>
-                                <option value="XL">XL</option>
-                                <option value="XXL">XXL</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="danhmuc" class="form-label">Gía sản phẩm</label>
-                            <input value="<?= $sanPhamInfo['gia_sp'] ?>" required type="number" class="form-control"
-                                name="gia" id="danhmuc">
-                        </div>
-                        <div class="mb-3">
-                            <label for="danhmuc" class="form-label">Chất liệu sản phẩm</label>
-                            <input value="<?= $sanPhamInfo['loai'] ?>" required type="text" class="form-control"
-                                name="loai" id="danhmuc">
-                        </div>
-                        <div class="mb-3">
                             <label for="danhmuc" class="form-label">Ảnh sản phẩm</label>
                             <input type="file" class="form-control" name="hinhanh" id="danhmuc">
                         </div>
+                        <div class="mb-3">
+                            <label for="danhmuc" class="form-label">Gía sản phẩm</label>
+                            <input value="<?= $sanPhamInfo['gia_sp'] ?>" required type="number" class="form-control"
+                                name="gia_sp" id="danhmuc">
+                        </div> 
+                        <div class="mb-3">
+                            <label for="mausau" class="form-label">Hãng</label>
+                            <select required class="form-select" name="hang" aria-label="Default select example">
+                                <option value="Vui lòng chọn hãng">Vui lòng chọn hãng</option>
+                                <option value="Panasonic">Panasonic</option>
+                                <option value="Sam Sung">Sam Sung</option>
+                                <option value="FPT">FPT</option>
+                                <option value="TOSHIBA">TOSHIBA</option>
+                                <option value="PHILIPS">PHILIPS</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="danhmuc" class="form-label">Mô tả sản phẩm</label>
+                            <input value="<?= $sanPhamInfo['mo_ta'] ?>" required type="text" class="form-control"
+                                name="mo_ta" id="danhmuc">
+                        </div>  
                         <input type="hidden" name="id" value="<?= $sanPhamInfo['id_sp'] ?>">
                         <button type="submit" name="edit" class="btn btn-primary">Sửa</button>
                     </form>
