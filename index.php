@@ -14,6 +14,21 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
         case "listgiohang" :
             include_once "controller/cart/index.php" ;
             break;
+            case 'hienthithanhtoan':
+                include_once 'controller/checkout/index.php';
+                break;
+            case 'thanhtoan':
+                include_once 'controller/checkout/add.php';
+                break;
+                case 'login':
+                    include_once 'controller/login/login.php';
+                    break;
+                    case 'dangki':
+                        include_once 'controller/login/dangki.php';
+                        break;
+                        case 'contact':
+                            include_once 'controller/contact/contact.php';
+                            break;
     } 
 }
  else {

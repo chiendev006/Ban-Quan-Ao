@@ -8,14 +8,13 @@ if (!isset($_POST['add'])) {
 } else {
     $name = $_POST['name'];
     $idDanhMuc = $_POST['danhmuc'];
-    $mauSac = $_POST['mausac'];
-    $kichCo = $_POST['kichco'];
-    $gia = $_POST['gia'];
-    $chatlieu = $_POST['loai'];
+    $gia = $_POST['gia_sp'];
+    $hang = $_POST['hang'];
+    $mota = $_POST['mo_ta'];
     $filePath = 'upload/';
     $fileName = date("Y_m_d_H_i_s") . $_FILES['hinhanh']['name'];
     move_uploaded_file($_FILES['hinhanh']['tmp_name'],$filePath . $fileName);
-    addSanPham($name, $idDanhMuc, $mauSac, $kichCo, $gia, $chatlieu, $fileName);
+    addSanPham($name, $idDanhMuc, $gia, $hang, $mota, $fileName);
     $script = "<script> 
     alert('Thêm sản phẩm thành công!');
     window.location = 'index.php?action=listsanpham';

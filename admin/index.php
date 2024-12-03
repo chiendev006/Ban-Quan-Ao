@@ -42,6 +42,9 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
         case 'capnhathoadon':
             include_once "controller/hoadon/capnhat.php";
             break;
+            case 'listContact':
+                include_once "controller/contact/list.php";
+                break;
     }
 } else {
     include_once 'controller/dashboard/index.php';

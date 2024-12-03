@@ -35,11 +35,10 @@ include_once("./view/layouts/header.php");
                             <tr>
                                 <th class="col-1">ID</th>
                                 <th>Tên</th>
-                                <th>Màu</th>
-                                <th>Kích cỡ</th>
                                 <th>Giá</th>
+                                <th>Hãng</th>
+                                <th>Mô tả</th>
                                 <th>Hình ảnh</th>
-                                <th>Chất liệu</th>
                                 <th>Tên danh mục</th>
                                 <th class="col-2">Action</th>
                             </tr>
@@ -52,9 +51,9 @@ include_once("./view/layouts/header.php");
                                 <tr>
                                     <td><?= $value['id_sp'] ?></td>
                                     <td><?= $value['ten_sp'] ?></td>
-                                    <td><?= $value['mau_sac'] ?></td>
-                                    <td><?= $value['kich_co'] ?></td>
                                     <td><?= $value['gia_sp'] ?></td>
+                                    <td><?= $value['hang'] ?></td>
+                                    <td><?= $value['mo_ta'] ?></td>
                                     <td>
                                         <?php
                                         if ($value['img']!=null): ?>
@@ -65,7 +64,6 @@ include_once("./view/layouts/header.php");
                                                 style="width: 100px; height: auto;">
                                         <?php endif; ?>
                                     </td>
-                                    <td><?= $value['loai'] ?></td>
                                     <td><?= $value['iddm'] ?></td>
                                     <td>
                                         <div class="d-flex">
