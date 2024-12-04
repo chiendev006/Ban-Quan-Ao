@@ -1,4 +1,14 @@
+<?php
+ob_start();
+session_start();
+if (isset($_SESSION['admin'])){
+    $admin = $_SESSION['admin'];
+} else {
+    header("location: dnadmin.php");
+}
+?>
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>

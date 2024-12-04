@@ -29,6 +29,9 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
                         case 'contact':
                             include_once 'controller/contact/contact.php';
                             break;
+            case 'dnadmin':
+                include_once 'controller/login/dnadmin.php';
+                break;
     } 
 }
  else {
