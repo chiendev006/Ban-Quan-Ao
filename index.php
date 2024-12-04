@@ -35,6 +35,10 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
                                 case 'binhluan':
                                     include_once 'controller/binhluan/index.php';
                                     break;
+                                    case 'logout':
+                                        include_once 'controller/login/logout.php';
+                                        break;
+                                
                             
     } 
 }
