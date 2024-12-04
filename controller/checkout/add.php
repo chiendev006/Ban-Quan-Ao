@@ -33,7 +33,7 @@ if (isset($_POST['thanhtoan'])) {
     $tongTien, $hoTen, $diaChi, $sdt, $email);
 
     foreach ($listGioHang as $item) {
-        addChiTietHoaDon($idHoaDon, $item['id'], $item['gia'], $item['soLuong']);
+        addChiTietHoaDon($idHoaDon, $item['id'], $item['gia'], $item['so_luong']);
     }
 
     unset($_SESSION['gioHang']);
