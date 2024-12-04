@@ -127,7 +127,7 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="http://localhost/DU_AN_BAN_QUAN_AO/" class="nav-item nav-link">Trang chủ</a>
                             <a href="http://localhost/DU_AN_BAN_QUAN_AO/index.php?action=index-shop" class="nav-item nav-link active">Sản phẩm</a>
-                            <a href="detail.html" class="nav-item nav-link">Chi tiết sản phẩm</a>
+                            <!-- <a href="detail.html" class="nav-item nav-link">Chi tiết sản phẩm</a> -->
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Giỏ hàng</a>
                                 <div class="dropdown-menu rounded-0 m-0">
