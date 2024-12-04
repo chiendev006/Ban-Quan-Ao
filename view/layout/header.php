@@ -140,6 +140,8 @@
                         <div class="navbar-nav ml-auto py-0">
                             <a href="index.php?action=login" class="nav-item nav-link">Đăng nhập</a>
                             <a href="index.php?action=dangki" class="nav-item nav-link">Đăng kí</a>
+                            <a href="index.php?action=logout" class="nav-item nav-link">Đăng xuất</a>
+
                         </div>
                     </div>
                 </nav>
