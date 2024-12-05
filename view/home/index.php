@@ -89,7 +89,7 @@ include_once ('view/layout/header.php');
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3"><?= $item['ten_sp'] ?></h6>
                         <div class="d-flex justify-content-center">
-                            <h6><?= $item['gia_sp'] ?></h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6><?= $item['gia_sp']. " VND" ?></h6><h6 class="text-muted ml-2"><del><?= $item['gia_sale']?></del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">

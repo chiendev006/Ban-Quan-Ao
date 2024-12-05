@@ -104,14 +104,20 @@
                 </a>
                 <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                    <div class="featured__controls">
-                    <ul>
-                        <li class="active" data-filter="*">All</li>
-                        <?php foreach ($listDanhMuc as $key => $item) { ?>
-                            <li data-filter=".<?= $item['id_danh_muc'] ?>"><?= $item['name_danh_muc'] ?></li>
-                        <?php } ?>
-                    </ul>
-                </div>
+                    <div class="product-filters">
+						
+                    <ul class="danh-muc">
+    <?php foreach ($listDanhMuc as $item): ?>
+        <li>
+            <a href="?action=sanpham&id_danh_muc=<?= $item['id_danh_muc'] ?>">
+                <?= htmlspecialchars($item['name_danh_muc']) ?>
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+
+                    </div>
                     </div>
                 </nav>
             </div>

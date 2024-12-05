@@ -40,6 +40,18 @@ function changeStatus1($id, $status)
     $sql = "update san_pham set status = '$status' where id_sp ='$id'";
     pdo_execute($sql);
 }
+function loadall_sanpham($ten_sp,$iddm) {
+    $sql = "select * from san_pham where 1";
+    if($ten_sp!="") {
+        $sql.= " and ten_sp like '%".$ten_sp."%'";
+    }
+    if($iddm>0) {
+        $sql.=" and iddm ='".$iddm."'";
+    }
+    $sql.= " order by id desc";
+    $listsanpham = pdo_query($sql);
+    return  $listsanpham;
+}
 
 
     
