@@ -14,4 +14,19 @@ if (isset($_GET['id'])) {
         
     }
     include_once "./view/hoadon/chitiet.php";
+} $listGioHang = isset($_SESSION['gioHang']) ? $_SESSION['gioHang'] : [];
+
+// Duyệt qua các sản phẩm trong giỏ hàng
+foreach ($listGioHang as $key => $item) {
+    // Lấy thông tin sản phẩm từ ID trong giỏ hàng
+    $sanPhamInfo = getSanPhamById($item['id']);
+    
+    // Cập nhật thông tin sản phẩm vào giỏ hàng
+    $listGioHang[$key]['ten_sp'] = $sanPhamInfo['ten_sp'];
+    $listGioHang[$key]['gia_sp'] = $sanPhamInfo['gia_sp'];
+    $listGioHang[$key]['img'] = $sanPhamInfo['img'];
+    
+    // Tính tổng tiền cho từng sản phẩm
+    $total += $sanPhamInfo['gia_sp'] * $item['so_luong'];
 }
+

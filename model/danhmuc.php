@@ -25,7 +25,7 @@ function editDanhMuc($id, $name)
     pdo_execute($sql);
 }
 
-function changeStatus($id, $status)
+function changeCategoryStatus($id, $status)
 {
     $sql = "update danh_muc set status = '$status' where id_danh_muc='$id'";
     pdo_execute($sql);

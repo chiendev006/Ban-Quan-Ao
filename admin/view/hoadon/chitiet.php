@@ -98,9 +98,10 @@ include_once("./view/layouts/header.php");
                                         <td><?= $item['kichco'] ?></td>
                                         <td><?= $item['so_luong'] ?></td>
                                         <td><?= number_format($item['gia']) ?> VNĐ</td>
-                                        <td><?= number_format($item['gia'] * $item['so_luong']) ?> VNĐ</td>
+                                        <td><?= number_format($item['gia'] * $item['so_luong']) ?> VND</td>
                                     </tr>
                                 <?php } ?>
+                                
                             </tbody>
                         </table>
                         <input type="hidden" name="id" value="<?= $hoaDonChiTiet['id_hoadon'] ?>">

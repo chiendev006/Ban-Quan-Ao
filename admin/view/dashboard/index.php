@@ -15,75 +15,71 @@ include_once("./view/layouts/header.php");
     <div class="page-content">
         <section class="row">
             <div class="col-12 col-lg-9">
-                <div class="row">
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon purple">
-                                            <i class="iconly-boldShow"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Doanh thu ngày</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon blue">
-                                            <i class="iconly-boldProfile"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Followers</h6>
-                                        <h6 class="font-extrabold mb-0">183.000</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon green">
-                                            <i class="iconly-boldAdd-User"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Following</h6>
-                                        <h6 class="font-extrabold mb-0">80.000</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon red">
-                                            <i class="iconly-boldBookmark"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Saved Post</h6>
-                                        <h6 class="font-extrabold mb-0">112</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row">
+    <!-- Chọn ngày -->
+    <div class="col-4">
+        <form method="GET" action="">
+            <div class="form-group">
+                <label for="ngay">Chọn ngày:</label>
+                <input type="date" id="ngay" name="ngay" class="form-control" value="<?= isset($_GET['ngay']) ? $_GET['ngay'] : '' ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Lọc</button>
+        </form>
+    </div>
+
+    <!-- Chọn tháng -->
+    <div class="col-4">
+        <form method="GET" action="">
+            <div class="form-group">
+                <label for="thang">Chọn tháng:</label>
+                <input type="month" id="thang" name="thang" class="form-control" value="<?= isset($_GET['thang']) ? $_GET['thang'] : '' ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Lọc</button>
+        </form>
+    </div>
+
+    <!-- Chọn năm -->
+    <div class="col-4">
+        <form method="GET" action="">
+            <div class="form-group">
+                <label for="nam">Chọn năm:</label>
+                <input type="number" id="nam" name="nam" class="form-control" min="2000" max="2099" step="1" value="<?= isset($_GET['nam']) ? $_GET['nam'] : '' ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Lọc</button>
+        </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Doanh thu hôm nay</h5>
+                <p><?= number_format($doanh_thu_ngay, 2) ?> VNĐ</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Doanh thu tháng này</h5>
+                <p><?= number_format($doanh_thu_thang, 2) ?> VNĐ</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Doanh thu năm nay</h5>
+                <p><?= number_format($doanh_thu_nam, 2) ?> VNĐ</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -274,6 +270,34 @@ include_once("./view/layouts/header.php");
             </div>
         </section>
     </div>
+    <script>
+
+    
+    // Hàm reset giá trị các input khác
+function resetInputs(currentId) {
+    // Lấy danh sách tất cả các input
+    const inputs = document.querySelectorAll("#ngay, #thang, #nam");
+    
+    // Lặp qua các input và reset giá trị nếu không phải input hiện tại
+    inputs.forEach(input => {
+        if (input.id !== currentId) {
+            input.value = ''; // Reset giá trị
+        }
+    });
+}
+
+// Gắn sự kiện submit cho từng form
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function (event) {
+        // Lấy ID của input hiện tại
+        const currentInputId = this.querySelector('input').id;
+
+        // Đợi form xử lý xong, sau đó reset các input khác
+        setTimeout(() => resetInputs(currentInputId), 100);
+    });
+});
+</script>
+
     <?php
     include_once("./view/layouts/footer.php");
     ?>

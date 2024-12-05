@@ -18,11 +18,25 @@ function addSanPham($name, $idDanhMuc, $mauSac, $kichCo, $gia, $chatlieu, $fileN
     pdo_execute($sql);
 }
 
-function getSanPhamById($id)
-{
-    $sql = "select * from san_pham where id_sp = $id";
-    return pdo_query_one($sql);
+function getSanPhamById($id) {
+    // Kết nối CSDL
+    $conn = pdo_get_connection();
+
+    // Lấy thông tin sản phẩm từ CSDL
+    $sql = "SELECT * FROM san_pham WHERE id_sp = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    // Kiểm tra kết quả truy vấn
+    $sanPham = $stmt->fetch(PDO::FETCH_ASSOC);
+     // Thêm dòng này để kiểm tra kết quả
+
+    // Trả về thông tin sản phẩm
+    return $sanPham;
 }
+
+
 
 function editSanPham($id, $name, $idDanhMuc, $mauSac, $kichCo, $gia, $chatlieu, $fileName)
 {
@@ -40,6 +54,14 @@ function changeStatus1($id, $status)
     $sql = "update san_pham set status = '$status' where id_sp ='$id'";
     pdo_execute($sql);
 }
+  
+function getSanPhamByDanhMuc($idDanhMuc) {
+    $sql = "SELECT * FROM san_pham WHERE iddm = :idDanhMuc";
+    $stmt = pdo_query($sql, ['idDanhMuc' => $idDanhMuc]);
+    return $stmt;
+}
+
+
 
 
     

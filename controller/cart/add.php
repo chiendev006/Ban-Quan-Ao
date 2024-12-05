@@ -1,33 +1,34 @@
 <?php
-if(isset($_GET['id'])) {
+session_start();
+include_once('model/sanpham.php'); // Bao gồm file chứa hàm getSanPhamById()
+
+// Lấy thông tin sản phẩm từ cơ sở dữ liệu
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $so_luong = 1;
-    if(!isset($_SESSION['gioHang'])) {
+    $soLuong = 1;  // Mặc định số lượng là 1
+
+    // Khởi tạo giỏ hàng nếu chưa có
+    if (!isset($_SESSION['gioHang'])) {
         $_SESSION['gioHang'] = [];
-        $_SESSION['gioHang'][] = [
-            'id' => $id,
-            'so_luong' => $so_luong
-        ];
-    }else {
-        $tontai = false;
-        foreach ($_SESSION['gioHang'] as $key => $value) {
-            if($id == $value['id']) {
-                $tontai = true;
-                $_SESSION['gioHang'][$key]['so_luong'] += 1;
-                break;
-            }
-        }
-        if($tontai == false){
-            $_SESSION['gioHang'][] = [
-                'id' => $id,
-                'so_luong' => $so_luong
-            ];
+    }
+
+    // Kiểm tra nếu sản phẩm đã có trong giỏ hàng
+    $tonTaiTrongGioHang = false;
+    foreach ($_SESSION['gioHang'] as $key => $item) {
+        if ($id == $item['id']) {
+            $_SESSION['gioHang'][$key]['soLuong'] += 1;
+            $tonTaiTrongGioHang = true;
+            break;
         }
     }
-    $script = "<script> 
-    window.location = 'index.php?action=listgiohang';
-    </script>";
-    echo $script;
+
+    if (!$tonTaiTrongGioHang) {
+        $_SESSION['gioHang'][] = [
+            'id' => $id,
+            'soLuong' => $soLuong
+        ];
+    }
+
+    // Chuyển hướng đến trang giỏ hàng
+    echo "<script>window.location = 'index.php?action=listgiohang';</script>";
 }
-    
-?>

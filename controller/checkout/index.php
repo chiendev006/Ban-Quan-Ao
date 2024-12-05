@@ -20,7 +20,7 @@ if (isset($_SESSION['gioHang'])) {
         }
     }
 
-    include_once('view/cart/index.php'); // Hiển thị giao diện giỏ hàng
+    include_once('view/checkout/index.php'); // Hiển thị giao diện giỏ hàng
 } else {
     echo "<script>
         alert('Giỏ hàng đang trống !!!!!!');

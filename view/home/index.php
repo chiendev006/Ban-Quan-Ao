@@ -1,6 +1,7 @@
 
 <?php
 include_once ('view/layout/header.php');
+
 ?>
 
 

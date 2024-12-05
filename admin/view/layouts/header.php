@@ -71,6 +71,11 @@
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Hoa don</span>
                             </a>
+                        </li> <li class="sidebar-item">
+                            <a href="index.php?action=manage_contact" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Contact</span>
+                            </a>
                         </li>
 
                     </ul>

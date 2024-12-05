@@ -1,4 +1,7 @@
 <?php
+
+
+
 $base_url = "http://" . $_SERVER['SERVER_NAME'] . dirname($_SERVER["REQUEST_URI"] . '?') . '/';
 if (isset($_GET['action']) && $_GET['action'] != '') {
     $action = $_GET['action'];
@@ -42,6 +45,13 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
         case 'capnhathoadon':
             include_once "controller/hoadon/capnhat.php";
             break;
+            case 'manage_contact':
+                
+                require_once 'controller/manageContactController/manageContactController.php';
+                showContactList();
+                break;
+    
+           
     }
 } else {
     include_once 'controller/dashboard/index.php';
