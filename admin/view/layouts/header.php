@@ -4,10 +4,11 @@ session_start();
 if (isset($_SESSION['admin'])){
     $admin = $_SESSION['admin'];
 } else {
-    header("location: dangnhap.php");
+    header("location: dnadmin.php");
 }
 ?>
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
