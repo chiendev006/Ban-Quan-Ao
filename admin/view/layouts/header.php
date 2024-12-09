@@ -1,3 +1,12 @@
+<?php
+ob_start();
+session_start();
+if (isset($_SESSION['admin'])){
+    $admin = $_SESSION['admin'];
+} else {
+    header("location: dangnhap.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,6 +85,12 @@
                             <a href="index.php?action=listContact" class='sidebar-link'>
                                 <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                                 <span>Liên hệ</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="index.php?action=listBinhluan" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Bình luận</span>
                             </a>
                         </li>
 

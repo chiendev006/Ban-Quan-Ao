@@ -12,7 +12,7 @@ include_once "view/layout/header.php";
                 <div class="carousel-inner border">
                     <div class="carousel-item active">
                         <img src="<?= $base_url . 'admin/upload/' . $xem_Sp['img'] ?>" alt=""
-                            style="width: 80%; height: 800px;">
+                            style="width: 100%; height: 600px;">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">

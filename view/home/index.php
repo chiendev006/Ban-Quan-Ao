@@ -73,7 +73,7 @@ include_once ('view/layout/header.php');
     <!-- Products Start -->
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Trandy Products</span></h2>
+            <h2 class="section-title px-5"><span class="px-2">Sản phẩm mới nhất</span></h2>
         </div>  
         <div class="row px-xl-5 pb-3">
         <div class="row px-xl-5 pb-3">
@@ -111,17 +111,10 @@ include_once ('view/layout/header.php');
         <div class="row justify-content-md-center py-5 px-xl-5">
             <div class="col-md-6 col-12 py-5">
                 <div class="text-center mb-2 pb-2">
-                    <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
-                    <p>Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod duo labore labore.</p>
+                    <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Gia dụng</span></h2>
+                    <p>Sản phẩm chất lượng được sản xuất bởi công nghệ hiện đại nhất thế giới.</p>
                 </div>
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-white p-4" placeholder="Email Goes Here">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
+                
             </div>
         </div>
     </div>
@@ -131,7 +124,7 @@ include_once ('view/layout/header.php');
     <!-- Products Start -->
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Just Arrived</span></h2>
+            <h2 class="section-title px-5"><span class="px-2">Danh sách sản phẩm</span></h2>
         </div>
         <div class="row px-xl-5 pb-3">
         <?php 

@@ -1,3 +1,7 @@
+<?php
+include_once "./model/danhmuc.php";
+$listDanhMuc = listDanhMuc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +42,7 @@
                     <span class="text-muted px-2">|</span>
                     <a class="text-dark" href="">Help</a>
                     <span class="text-muted px-2">|</span>
-                    <a class="text-dark" href="">Support</a>
+                    <a class="text-dark" href="">Hỗ trợ</a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -64,13 +68,13 @@
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">Electronic</span>Shop</h1>
                 </a>
             </div>
             <div class="col-lg-6 col-6 text-left">
                 <form action="">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
                         <div class="input-group-append">
                             <span class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
@@ -84,9 +88,9 @@
                     <i class="fas fa-heart text-primary"></i>
                     <span class="badge">0</span>
                 </a>
-                <a href="" class="btn border">
+                <a href="index.php?action=listgiohang" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
+                    <span class="badge"></span>
                 </a>
             </div>
         </div>
@@ -108,7 +112,7 @@
                     <ul>
                         <li class="active" data-filter="*">All</li>
                         <?php foreach ($listDanhMuc as $key => $item) { ?>
-                            <li data-filter=".<?= $item['id_danh_muc'] ?>"><?= $item['name_danh_muc'] ?></li>
+                            <a href="index.php?action=danhmuc&iddm=<?= $item['id_danh_muc'] ?>"><li data-filter=".<?= $item['id_danh_muc'] ?>"><?= $item['name_danh_muc'] ?></li></a>
                         <?php } ?>
                     </ul>
                 </div>
@@ -151,9 +155,9 @@
                             <img class="img-fluid" src="admin/asset/images/logo/299_banner_web.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">Giảm giá cho thành viên mới 10%</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Đồ gia dụng</h3>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -161,9 +165,9 @@
                             <img class="img-fluid" src="admin/asset/images/logo/banner_0.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">Ưu đãi đặc biệt</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Đồ gia dụng</h3>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -171,9 +175,8 @@
                             <img class="img-fluid" src="admin/asset/images/logo/banner3.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">Ưu đãi đặc biệt</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Đồ gia dụng</h3>
                                 </div>
                             </div>
                         </div>

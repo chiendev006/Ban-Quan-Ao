@@ -38,7 +38,10 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
                                     case 'logout':
                                         include_once 'controller/login/logout.php';
                                         break;
-                                
+                                        case "danhmuc":
+                                            include_once "controller/danhmuc/index.php";
+                                            break;                   
+                                            
                             
     } 
 }

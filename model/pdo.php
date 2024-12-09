@@ -55,20 +55,17 @@ function pdo_execute_return_id($sql)
  * @throws PDOException lỗi thực thi câu lệnh
  */
 /* function để truy vấn dữ liệu theo yêu cầu nào đó (1 hoặc nhiều điều kiện) */
-function pdo_query($sql)
-{
-    $sql_args = array_slice(func_get_args(), 1);
-    try {
-        $conn = pdo_get_connection();
-        $stmt = $conn->prepare($sql);
-        $stmt->execute($sql_args);
-        $rows = $stmt->fetchAll();
-        return $rows;
-    } catch (PDOException $e) {
-        throw $e;
-    } finally {
-        unset($conn);
+function pdo_query($sql, $params = []) {
+    $pdo = pdo_get_connection(); // Giả sử bạn có hàm này để kết nối DB.
+    $stmt = $pdo->prepare($sql);
+    
+    // Bind các tham số
+    foreach ($params as $key => $value) {
+        $stmt->bindValue(":$key", $value);
     }
+    
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC); // Hoặc cách lấy dữ liệu khác tùy vào nhu cầu
 }
 /**
  * Thực thi câu lệnh sql truy vấn một bản ghi
