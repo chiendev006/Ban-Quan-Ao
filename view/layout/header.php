@@ -1,4 +1,8 @@
 <?php
+$isLoggedIn = isset($_SESSION['user']);
+?>
+
+<?php
 include_once "./model/danhmuc.php";
 $listDanhMuc = listDanhMuc();
 ?>
@@ -142,11 +146,16 @@ $listDanhMuc = listDanhMuc();
                             <a href="index.php?action=contact" class="nav-item nav-link">Liên hệ</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="index.php?action=login" class="nav-item nav-link">Đăng nhập</a>
-                            <a href="index.php?action=dangki" class="nav-item nav-link">Đăng kí</a>
-                            <a href="index.php?action=logout" class="nav-item nav-link">Đăng xuất</a>
-
-                        </div>
+    <?php if (!$isLoggedIn): ?>
+        <!-- Hiển thị Đăng nhập và Đăng ký nếu chưa đăng nhập -->
+        <a href="index.php?action=login" class="nav-item nav-link">Đăng nhập</a>
+        <a href="index.php?action=dangki" class="nav-item nav-link">Đăng ký</a>
+    <?php else: ?>
+        <!-- Hiển thị Đăng xuất nếu đã đăng nhập -->
+        <span class="nav-item nav-link">Chào, <?php echo htmlspecialchars($_SESSION['user']['ho_ten']); ?>!</span>
+        <a href="index.php?action=logout" class="nav-item nav-link">Đăng xuất</a>
+    <?php endif; ?>
+</div>
                     </div>
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">

@@ -12,7 +12,7 @@ if (!isset($_POST['add'])) {
     $diachi = $_POST['dia_chi'];
     addTaikhoan($hoten,$ngaySinh,$email,$matkhau,$sdt,$diachi);
     $script = "<script> 
-    alert('Thêm danh mục thành công!');
+    alert('Đăng kí thành công!');
     window.location = 'index.php?action=login';
     </script>";
     echo $script;

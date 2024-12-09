@@ -25,7 +25,7 @@ include_once "view/index_checkout/header.php";
                           </div>
                           <button type="submit" class="btn btn-warning">Đăng nhập</button>
 						  <button type="button" class="btn btn-warning" onclick="window.location.href='index.php?action=dangki'">Đăng Ký</button>
-              <button type="button" class="btn btn-warning" onclick="window.location.href='http://localhost/DU_AN_BAN_QUAN_AO/admin/dangnhap.php'">Đăng nhập Admin</button>
+              <button type="button" class="btn btn-warning" onclick="window.location.href='http://localhost/DU_AN_BAN_QUAN_AO/admin/dnadmin.php'">Đăng nhập Admin</button>
                         </form>
                       </div>                    
                   </div>
