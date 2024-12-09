@@ -40,6 +40,11 @@ function changeStatus1($id, $status)
     $sql = "update san_pham set status = '$status' where id_sp ='$id'";
     pdo_execute($sql);
 }
+function getSanPhamByDanhMuc($idDanhMuc) {
+    $sql = "SELECT * FROM san_pham WHERE iddm = :idDanhMuc";
+    $stmt = pdo_query($sql, ['idDanhMuc' => $idDanhMuc]);
+    return $stmt;
+}
 
 
     

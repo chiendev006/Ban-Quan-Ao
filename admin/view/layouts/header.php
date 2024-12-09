@@ -88,6 +88,12 @@ if (isset($_SESSION['admin'])){
                                 <span>Liên hệ</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="index.php?action=listBinhluan" class='sidebar-link'>
+                                <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                                <span>Bình luận</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>

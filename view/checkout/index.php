@@ -2,9 +2,9 @@
 <!-- Page Header Start -->
 <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Thanh toán</h1>
             <div class="d-inline-flex">
-                <p class="m-0"><a href="">Home</a></p>
+                <p class="m-0"><a href="index.php">Home</a></p>
                 <p class="m-0 px-2">-</p>
                 <p class="m-0">Checkout</p>
             </div>
@@ -23,19 +23,19 @@
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label>Tên của bạn</label>
-                            <input class="form-control" name="ten" type="text" placeholder="John">
+                            <input class="form-control" name="ten" type="text" placeholder="Tên">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Dia chi</label>
-                            <input class="form-control" name="diachi" type="text" placeholder="Doe">
+                            <input class="form-control" name="diachi" type="text" placeholder="Địa chỉ">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>SDT</label>
-                            <input class="form-control" name="sdt" type="text" placeholder="example@email.com">
+                            <input class="form-control" name="sdt" type="text" placeholder="SĐT">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Email</label>
-                            <input class="form-control" name="email" type="text" placeholder="+123 456 789">
+                            <input class="form-control" name="email" type="text" placeholder="Email">
                         </div>
                         <div class="col-md-12 form-group">
                         </div>
@@ -69,10 +69,13 @@
                         <h4 class="font-weight-semi-bold m-0">Tổng thanh toán</h4>
                     </div>
                     <ul>
-                                <?php foreach ($listGioHang as $item) { ?>
-                                    <li><?= $item['tenSP'] ?><span><?= number_format($item['gia'] * $item['so_luong']) ?></span></li>
-                                <?php } ?>
-                            </ul>
+                    <?php foreach ($listGioHang as $key => $item) { ?>
+                        <p>Sản phẩm <?= $key+1 ?>:</p>
+                        <li>Tên san phẩm: <?= $item['tenSP'] ?><span><?= number_format($item['gia'] * $item['so_luong']) ?></span></li>
+                        <p>Giá sản phẩm: <?= $item['gia'] ?>VNĐ</p>
+                        <img src="<?= $base_url . 'admin/upload/' . $item['img'] ?>" alt="" style="width: 50%; height: 100px;">
+                    <?php } ?>
+                    </ul>
                     <div class="card-body">
                         <h5 class="font-weight-medium mb-3">Products</h5>
                         <div class="d-flex justify-content-between">
@@ -91,32 +94,8 @@
                                 <label for="online"> Thanh toán online </label>
                                 <input type="radio" name="trang_thai_tt" value="1" id="online">
                             </div>
-                </div>
-                
+                </div>     
                 <div class="card border-secondary mb-5">
-                    <!-- <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Payment</h4>
-                    </div> -->
-                    <!-- <div class="card-body">
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Direct Check</label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="card-footer border-secondary bg-transparent">
                         <button name="thanhtoan" type="submit" class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Đặt hàng</button>
                     </div>
@@ -126,4 +105,4 @@
     </div>
     </form>
     <!-- Checkout End -->
-     <?php include_once "view/index_checkout/footer.php"; ?>
+     <?php include_once "view/layout/footer.php"; ?>

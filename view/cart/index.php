@@ -7,11 +7,11 @@ include_once "view/layout/header.php";
                 <table class="table table-bordered text-center mb-0">
                     <thead class="bg-secondary text-dark">
                         <tr>
-                            <th>Name</th>
-                            <th>Products</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Ảnh sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Giá sản phẩm</th>
                         </tr>
                     </thead>
                     <tbody class="align-middle">
@@ -44,17 +44,9 @@ include_once "view/layout/header.php";
                 </table>
             </div>
             <div class="col-lg-4">
-                <form class="mb-5" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-4" placeholder="Coupon Code">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary">Apply Coupon</button>
-                        </div>
-                    </div>
-                </form>
                 <div class="card border-secondary mb-5">
                     <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
+                        <h4 class="font-weight-semi-bold m-0">Thanh toán</h4>
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-3 pt-1">
@@ -68,7 +60,7 @@ include_once "view/layout/header.php";
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
                         <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
+                            <h5 class="font-weight-bold">Tổng tiền</h5>
                             <h5 class="font-weight-bold"><?= number_format($tongTien + 20000) ?></h5>
                         </div>
                         <a  href="index.php?action=hienthithanhtoan" class="btn btn-block btn-primary my-3 py-3" >Thanh toan</a>

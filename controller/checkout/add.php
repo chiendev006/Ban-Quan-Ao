@@ -23,7 +23,7 @@ if (isset($_POST['thanhtoan'])) {
     } else {
         $script = "<script>
         alert('Vui lòng đăng nhập để đặt hàng');
-        window.location = 'index.php';
+        window.location = 'index.php?action=login';
         </script>";
         echo $script;
         exit();

@@ -12,13 +12,13 @@ include_once("./view/layouts/header.php");
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Danh sách liên hệ</h3>
+                    <h3>Danh sách bình luận</h3>
                     <p class="text-subtitle text-muted"></p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"></a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active" aria-current="page"></li>
                         </ol>
                     </nav>
@@ -28,27 +28,26 @@ include_once("./view/layouts/header.php");
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                   
+                    
                 </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
                                 <th class="col-2">ID</th>
-                                <th>Tên khách hàng</th>
-                                <th class="col-2">Email</th>
-                                <th class="col-2">Nội dung</th>
+                                <th>Nội dung</th>
+                                <th>Ngày tạo</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($listContact as $key => $value) {
+                            foreach ($listBinhluan as $key => $value) {
                                 ?>
                                 <tr>
-                                    <td><?= $value['id'] ?></td>
-                                    <td><?= $value['name'] ?></td>
-                                    <td><?= $value['email'] ?></td>
-                                    <td><?= $value['noidung'] ?></td>
+                                    <td><?= $value['id_binhluan'] ?></td>
+                                  
+                                    <td><?= $value['noi_dung'] ?></td>
+                                    <td><?= $value['ngay_tao'] ?></td>
                                 </tr>
                                 <?php
                             }
@@ -60,6 +59,7 @@ include_once("./view/layouts/header.php");
 
         </section>
     </div>
+
     <?php
     include_once("./view/layouts/footer.php");
     ?>

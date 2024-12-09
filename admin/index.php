@@ -45,6 +45,9 @@ if (isset($_GET['action']) && $_GET['action'] != '') {
             case 'listContact':
                 include_once "controller/contact/list.php";
                 break;
+                case 'listBinhluan':
+                    include_once "controller/binhluan/list.php";
+                    break;
     }
 } else {
     include_once 'controller/dashboard/index.php';

@@ -13,14 +13,14 @@ include_once("./view/layouts/header.php");
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>DataTable</h3>
-                    <p class="text-subtitle text-muted">For user to check they list</p>
+                    <h3>Hóa đơn chi tiết</h3>
+                    <p class="text-subtitle text-muted"></p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">DataTable</li>
+                            <li class="breadcrumb-item"><a href="index.html"></a></li>
+                            <li class="breadcrumb-item active" aria-current="page"></li>
                         </ol>
                     </nav>
                 </div>
@@ -29,7 +29,7 @@ include_once("./view/layouts/header.php");
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    Danh sách danh mục
+                    Chi tiết hóa đơn
                 </div>
                 <div class="card-body">
                     <form method="post" action="index.php?action=capnhathoadon">
@@ -50,7 +50,7 @@ include_once("./view/layouts/header.php");
                         </div>
                         <div class="mb-3">
                             <label for="name" class="form-label">Phương thức thanh toán</label>
-                            <select name="trang_thai_tt" class="form-select" aria-label="Default select example">
+                            <select name="trang_thai_tt" class="form-select" aria-label="Default select example" disabled>
                                 <option <?= $hoaDonChiTiet['trang_thai_tt'] == 0 ? 'selected' : '' ?> value="0">
                                     Chuyển khoản</option>
                                 <option <?= $hoaDonChiTiet['trang_thai_tt'] == 1 ? 'selected' : '' ?> value="1">Tiền
